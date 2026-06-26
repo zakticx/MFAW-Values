@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VLG Values</title>
+<title>MFAW Values</title>
 
 <link rel="icon" type="image/png" sizes="32x32"
-      href="https://i.postimg.cc/L80RpVch/vlg.png">
+      href="https://i.postimg.cc/3RmbCBF9/MFAW.png">
 
 <link rel="apple-touch-icon"
-      href="https://i.postimg.cc/L80RpVch/vlg.png">
+      href="https://i.postimg.cc/3RmbCBF9/MFAW.png">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="VLG Values">
-<meta property="og:description" content="Very Little Games Valuelist by Zakticx!">
-<meta property="og:image" content="https://i.postimg.cc/L80RpVch/vlg.png">
+<meta property="og:title" content="MFAW Values">
+<meta property="og:description" content="Muscle For Arm Wrestle Valuelist by Zakticx!">
+<meta property="og:image" content="https://i.postimg.cc/3RmbCBF9/MFAW.png">
 <meta name="theme-color" content="#6f4cff">
 
 <style>
@@ -182,26 +182,29 @@ body {
 <div class="header-note"><div id="last-updated">Note: Values are averaged from multiple trades, ensuring they are never manipulated and providing a fair and reliable experience!</div></div>
 
 <div class="tabs">
-  <div class="tab" onclick="switchSection(event, 'Exclusives')">Exclusives</div>
+  <div class="tab" onclick="switchSection(event, 'Titanics')">Titanics</div>
+  <div class="tab" onclick="switchSection(event, 'Huges')">Huges</div>
   <div class="tab" onclick="switchSection(event, 'StatPets')">Stat Pets</div>
   <div class="tab" onclick="switchSection(event, 'about')">About Us</div>
 </div>
 
 
-<div id="Exclusives" class="section">
-  <h2>Exclusives</h2>
-  <div class="pet-grid" id="Exclusives-grid"></div>
+<div id="Titanics" class="section">
+  <h2>Titanics</h2>
+  <div class="pet-grid" id="Titanics-grid"></div>
+</div>
+<div id="Huges" class="section">
+  <h2>Huges</h2>
+  <div class="pet-grid" id="Huges-grid"></div>
 </div>
 <div id="StatPets" class="section">
   <h2>Stat Pets</h2>
   <div class="pet-grid" id="StatPets-grid"></div>
 </div>
-
-
 <div id="about" class="section">
   <h2>About Us</h2>
   <p style="text-align:center; color:#d5d5d5; font-size:15px; line-height:1.6;">
-    Welcome to Very Little Games Values!<br><br>
+    Welcome to Muscle For Arm Wrestle Values!<br><br>
     I am Zakticx, the creator & manager of this Valuelist. This Valuelist is accurate and updated for all pet trades.<br><br>
     Contact me on Discord:<br>
     ⦁ Zakticx (@zakticx)<br>
@@ -209,7 +212,7 @@ body {
 </div>
 
 <div class="credit">
-  © 2026 VLG Values • Created by Zakticx
+  © 2026 MFAW Values • Created by Zakticx
 </div>
 
 
@@ -225,7 +228,8 @@ function switchSection(event, id) {
 }
 
 const pets = {
-  Exclusives: [],
+  Titanics: [],
+  Huges: [],
   StatPets: [],
 };
 
@@ -359,88 +363,190 @@ function timeAgo(ts){
 }
 
 
-addPet('Exclusives', {
-  name: "Doge",
-  img: "https://i.postimg.cc/nrkrYDC7/doge.webp",
-  description: "Limited Time Exclusive in shop",
+addPet('Titanics', {
+  name: "Atlantic Guardian",
+  img: "https://i.postimg.cc/FHs91fVv/atlanta.png",
+  description: "Limited-Time Titanic From Poseidon Egg in Exclusive Shop. 350% as Strong as your Best Pet!",
   updated: now(),
   variants: {
-    normal: { value: "2.5M", change: "+", demand: "7" }
+    normal: { value: "55000", change: "+", demand: "10" } ,
+    gold: { value: "120000", change: "+", demand: "10" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
-addPet('Exclusives', {
-  name: "Chest Mimic",
-  img: "https://i.postimg.cc/sDggC1Mn/chest-mimic.webp",
-  description: "Limited Time Exclusive in shop",
+addPet('Titanics', {
+  name: "Partygoer Cat",
+  img: "https://i.postimg.cc/yN1LSZfS/party1.png",
+  description: "Limited-Time Titanic From The Backrooms[Limited Event]. 350% as Strong as your Best Pet!",
   updated: now(),
   variants: {
-    normal: { value: "5M", change: "+", demand: "7" },
+    normal: { value: "32500", change: "+", demand: "9" } ,
+    gold: { value: "70000", change: "+", demand: "9" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
-addPet('Exclusives', {
-  name: "Dominus Astra",
-  img: "https://i.postimg.cc/vH2HYM9G/dominus-astra.webp",
-  description: "Limited Time Exclusive in shop",
+addPet('Titanics', {
+  name: "Neon Byte",
+  img: "https://i.postimg.cc/FRnCvHVj/neon.png",
+  description: "Permanent Titanic From Arcade Playzone[World 6]. 300% as Strong as your Best Pet!",
   updated: now(),
   variants: {
-    normal: { value: "8M", change: "+", demand: "8" },
+    normal: { value: "15000", change: "=", demand: "7" } ,
+    gold: { value: "32500", change: "=", demand: "7" } ,
+    rainbow: { value: "70000", change: "=", demand: "8" }
   }
 });
 
-addPet('Exclusives', {
-  name: "Blobfish",
-  img: "https://i.postimg.cc/sX119Xpy/blobfish.webp",
-  description: "Limited Time Exclusive in shop",
+
+addPet('Huges', {
+  name: "The Order",
+  img: "https://i.postimg.cc/1z8JHQQs/order.png",
+  description: "250% as Strong as your Best Peet!",
   updated: now(),
   variants: {
-    normal: { value: "???", change: "+", demand: "?" }
+    normal: { value: "5200", change: "=", demand: "8" } ,
+    gold: { value: "11500", change: "=", demand: "8" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
   }
 });
 
-addPet('Exclusives', {
-  name: "Electric Slime",
-  img: "https://i.postimg.cc/zDbkSwS3/electric-slime.webp",
-  description: "Limited Time Exclusive in shop",
+addPet('Huges', {
+  name: "The Omen",
+  img: "https://i.postimg.cc/j5dq9ZMY/omen.png",
+  description: "240% as Strong as your Best Peet!",
   updated: now(),
   variants: {
-    normal: { value: "???", change: "+", demand: "?" }
+    normal: { value: "3800", change: "+", demand: "8" } ,
+    gold: { value: "8500", change: "+", demand: "7" } ,
+    rainbow: { value: "19000", change: "+", demand: "8" }
   }
 });
 
-addPet('Exclusives', {
-  name: "Galaxy Dragon",
-  img: "https://i.postimg.cc/wxCQWt0h/galaxy-dragon.webp",
-  description: "Limited Time Exclusive in shop",
+addPet('Huges', {
+  name: "Kraken",
+  img: "https://i.postimg.cc/c13YcJtk/kraken.png",
+  description: "225% as Strong as your Best Peet!",
   updated: now(),
   variants: {
-    normal: { value: "???", change: "+", demand: "?" }
+    normal: { value: "3200", change: "+", demand: "8" } ,
+    gold: { value: "7000", change: "+", demand: "8" } ,
+    rainbow: { value: "N/A", change: "+", demand: "9" }
+  }
+});
+
+addPet('Huges', {
+  name: "Galaxy Emperor",
+  img: "https://i.postimg.cc/L8xmPzHG/galaxy.png",
+  description: "200% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "2500", change: "=", demand: "7" } ,
+    gold: { value: "5500", change: "=", demand: "8" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
+  }
+});
+
+addPet('Huges', {
+  name: "Cosmi Bear",
+  img: "https://i.postimg.cc/TwJKZKjx/cosmi-bear.png",
+  description: "175% as Strong as your Best Pet!",
+  updated: now(),
+  variants: {
+    normal: { value: "2000", change: "+", demand: "7" } ,
+    gold: { value: "4500", change: "+", demand: "8" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
+  }
+});
+
+addPet('Huges', {
+  name: "Axolotl",
+  img: "https://i.postimg.cc/JhbVqZmh/axo.png",
+  description: "180% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "1600", change: "=", demand: "7" } ,
+    gold: { value: "3500", change: "=", demand: "7" } ,
+    rainbow: { value: "7500", change: "+", demand: "8" }
+  }
+});
+
+addPet('Huges', {
+  name: "Paddinglock",
+  img: "https://i.postimg.cc/FKDt8mf8/paddinglock.png",
+  description: "175% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "1500", change: "+", demand: "7" } ,
+    gold: { value: "3250", change: "+", demand: "8" } ,
+    rainbow: { value: "O/C", change: "+", demand: "10" }
+  }
+});
+
+addPet('Huges', {
+  name: "Arcade Kitty",
+  img: "https://i.postimg.cc/X7MP2XHW/arcade-kitty.png",
+  description: "175% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "1400", change: "=", demand: "7" } ,
+    gold: { value: "3000", change: "=", demand: "7" } ,
+    rainbow: { value: "6500", change: "=", demand: "7" }
+  }
+});
+
+
+addPet('Huges', {
+  name: "King Doggy",
+  img: "https://i.postimg.cc/d1rfvYDq/king-doggy.png",
+  description: "175% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "1000", change: "=", demand: "6" } ,
+    gold: { value: "2350", change: "=", demand: "7" } ,
+    rainbow: { value: "4800", change: "+", demand: "8" }
+  }
+});
+
+addPet('Huges', {
+  name: "Hydra Dominus",
+  img: "https://i.postimg.cc/mDfdm5j3/hydra-dominus.png",
+  description: "150% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "600", change: "-", demand: "6" } ,
+    gold: { value: "1500", change: "-", demand: "6" } ,
+    rainbow: { value: "3500", change: "=", demand: "7" }
+  }
+});
+
+addPet('Huges', {
+  name: "Nutcracker Squirrel",
+  img: "https://i.postimg.cc/pdY8tcx0/nutcracker-squirrel.png",
+  description: "115% as Strong as your Best Peet!",
+  updated: now(),
+  variants: {
+    normal: { value: "300", change: "-", demand: "5" } ,
+    gold: { value: "650", change: "-", demand: "5" } ,
+    rainbow: { value: "1350", change: "-", demand: "6" }
   }
 });
 
 addPet('StatPets', {
-  name: "Domortuus",
-  img: "https://i.postimg.cc/c4k9X5qR/Domortuus-(2).png",
-  description: "Found in the Dominus Egg",
+  name: "Pufferfish",
+  img: "https://i.postimg.cc/j51jVywx/pufferfish.png",
+  description: "Secret Pet with Base Stat x450",
   updated: now(),
   variants: {
-    rainbow: { value: "70K", change: "-", demand: "7" }
-  }
-});
-
-addPet('StatPets', {
-  name: "Samurai Dragon",
-  img: "https://i.postimg.cc/05ThpySV/samuraidragon.png",
-  description: "Found in the Samurai Egg",
-  updated: now(),
-  variants: {
-    rainbow: { value: "???", change: "+", demand: "10" }
+    normal: { value: "200", change: "=", demand: "8" } ,
+    gold: { value: "450", change: "=", demand: "8" } ,
+    rainbow: { value: "1000", change: "+", demand: "9" }
   }
 });
 
 
-const fixedTime = new Date("2026-06-13T01:47:00Z").getTime();
+const fixedTime = new Date("2026-06-26T09:50:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
