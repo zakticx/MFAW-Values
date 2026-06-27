@@ -489,7 +489,7 @@ addPet("Titanics",{
     description:"Limited-Time Titanic From Poseidon Egg in Exclusive Shop. 350% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"55000",change:"+",demand:"10"},
+        normal:{value:"50000",change:"+",demand:"10"},
         gold:{value:"120000",change:"+",demand:"10"},
         rainbow:{value:"O/C",change:"+",demand:"10"}
     },
@@ -506,13 +506,13 @@ addPet("Titanics",{
     description:"Limited-Time Titanic From The Backrooms[Limited Event]. 350% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"32500",change:"+",demand:"9"},
-        gold:{value:"70000",change:"+",demand:"9"},
+        normal:{value:"34000",change:"+",demand:"9"},
+        gold:{value:"75000",change:"+",demand:"9"},
         rainbow:{value:"O/C",change:"+",demand:"10"}
     },
     history:{
-        normal:[["26 Jun",32500]],
-        gold:[["26 Jun",70000]],
+        normal:[["26 Jun",32500] , ["27 Jun",34000]],
+        gold:[["26 Jun",70000] , ["27 Jun",75000]],
         rainbow:[["26 Jun",0]]
     }
 });
@@ -523,14 +523,14 @@ addPet("Titanics",{
     description:"Permanent Titanic From Arcade Playzone[World 6]. 300% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"15000",change:"=",demand:"7"},
-        gold:{value:"32500",change:"=",demand:"7"},
-        rainbow:{value:"70000",change:"=",demand:"8"}
+        normal:{value:"16000",change:"=",demand:"7"},
+        gold:{value:"35000",change:"=",demand:"7"},
+        rainbow:{value:"80000",change:"=",demand:"8"}
     },
     history:{
-        normal:[["26 Jun",15000]],
-        gold:[["26 Jun",32500]],
-        rainbow:[["26 Jun",70000]]
+        normal:[["26 Jun",15000] , ["27 Jun",16000]],
+        gold:[["26 Jun",32500] , ["27 Jun",35000]],
+        rainbow:[["26 Jun",70000] , ["27 Jun",80000]]
     }
 });
 
@@ -574,13 +574,13 @@ addPet("Huges",{
     description:"225% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"3200",change:"+",demand:"8"},
-        gold:{value:"7000",change:"+",demand:"8"},
+        normal:{value:"5500",change:"+",demand:"8"},
+        gold:{value:"12000",change:"+",demand:"8"},
         rainbow:{value:"N/A",change:"+",demand:"9"}
     },
     history:{
-        normal:[["26 Jun",3200]],
-        gold:[["26 Jun",7000]],
+        normal:[["26 Jun",5500]],
+        gold:[["26 Jun",12000]],
         rainbow:[["26 Jun",0]]
     }
 });
@@ -809,7 +809,7 @@ document
 .classList.add("active");
 }
 
-const fixedTime = new Date("2026-06-26T14:15:00Z").getTime();
+const fixedTime = new Date("2026-06-27T12:00:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
