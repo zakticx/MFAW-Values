@@ -184,16 +184,6 @@ h2 {
   }
 }
 
-body {
-  zoom: 1;
-}
-
-@media (max-width: 624px) {
-  body {
-    zoom: 0.44;
-  }
-}
-
 
 
 .graph-btn{position:absolute;top:30px;right:6px;width:18px;height:18px;border-radius:50%;background:#6f4cff;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer}.graph-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999}.graph-box{background:#171228;padding:20px;border-radius:14px;width:min(700px,90%);position:relative}#closeGraph{position:absolute;right:12px;top:8px;cursor:pointer;font-size:22px}
@@ -262,11 +252,10 @@ border:1px solid rgba(184,137,255,.35);
 
 .toolbar{
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:16px;
+    justify-content:center;
+    gap:10px;
     padding:18px 20px;
-    flex-wrap:wrap;
 }
 .toolbar-btn,
 #sortSelect{
@@ -304,78 +293,226 @@ border:1px solid rgba(184,137,255,.35);
 }
 
 @media (max-width:768px){
+    
+    body{
+        overflow-x:hidden;
+    }
 
+    /* Main value list */
+    .pet-grid{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding:10px;
+    }
+
+    .pet-card{
+        width:100%;
+        min-width:0;
+        padding:10px;
+        box-sizing:border-box;
+    }
+
+    .pet-card img{
+        width:72px;
+        height:72px;
+    }
+
+    .pet-name{
+        font-size:13px;
+    }
+
+    .pet-row{
+        font-size:10px;
+    }
+
+    .value-number{
+        font-size:11px;
+    }
+
+    /* Trade calculator */
+     .trade-container{
+        display:flex !important;
+        flex-direction:row !important;
+        flex-wrap:nowrap !important;
+        justify-content:space-between;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .trade-side{
+        width:calc(50% - 20px) !important;
+        min-width:0 !important;
+        padding:10px;
+        box-sizing:border-box;
+    }
+
+    .trade-middle{
+        width:30px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding-top:120px;
+        font-size:28px;
+        flex:0 0 30px;
+    }
+    .trade-side h3{
+        font-size:16px;
+    }
+
+    .trade-add-button{
+        width:50px;
+        height:50px;
+        font-size:28px;
+    }
+
+    .picker-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:8px !important;
+        padding:8px !important;
+    }
+
+    .picker-grid .pet-card{
+        width:100%;
+        max-width:none;
+        min-width:0;
+        padding:8px;
+    }
+
+    .picker-grid .pet-card img{
+        width:55px;
+        height:55px;
+    }
+
+    .picker-grid .pet-name{
+        font-size:11px;
+    }
+
+    .picker-grid .pet-row{
+        font-size:9px;
+    }
+
+    .variant-add{
+        width:24px;
+        height:24px;
+        font-size:15px;
+    }
+}
 .toolbar{
     display:flex;
+    justify-content:center;
     align-items:center;
-    gap:8px;
+    gap:10px;
     flex-wrap:nowrap;
-    padding:12px;
-}
-
-#filterBtn{
-    width:44px;
-    height:44px;
-    padding:0;
-    font-size:18px;
 }
 
 #searchBox{
     flex:1;
-    min-width:0;
-    width:auto;
+    min-width:180px;
+    max-width:600px;
+    height:42px;
 }
 
-#sortSelect{
-    width:44px;
-    height:44px;
-    padding:0;
-    text-align:center;
-    font-size:18px;
+#filterBtn,
+#sortBtn{
+    flex:0 0 auto;
+    width:110px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    border:none;
+    border-radius:12px;
+    background:rgba(35,25,55,.95);
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
 }
 
+#filterBtn:hover,
+#sortBtn:hover{
+    background:#6f4cff;
 }
 
 .filter-wrapper,
 .sort-wrapper{
     position:relative;
+    display:inline-block;
 }
 
-.filter-wrapper{
-    position:relative;
-}
 .filter-menu{
     display:none;
     position:absolute;
     top:48px;
     left:0;
+    right:auto;
     width:180px;
     background:#1b1630;
     border:1px solid rgba(140,90,255,.25);
     border-radius:10px;
     padding:10px;
-    z-index:999;
+    z-index:9999;
 }
 #sortMenu{
+    display:none;
+    position:absolute;
+    top:48px;
     left:auto;
     right:0;
+    width:180px;
+    background:#1b1630;
+    border:1px solid rgba(140,90,255,.25);
+    border-radius:10px;
+    padding:10px;
+    z-index:9999;
 }
 
-.filter-menu.show{
+.filter-menu.show,
+#sortMenu.show{
     display:block;
 }
+
 .filter-menu label{
     display:block;
     padding:6px;
     cursor:pointer;
     font-size:14px;
 }
+
 .filter-menu label:hover{
     background:#2d2550;
     border-radius:6px;
 }
+
 .filter-menu input{
     margin-right:8px;
+}
+
+@media (max-width:768px){
+
+    .toolbar{
+        padding:10px;
+        gap:6px;
+    }
+
+    #searchBox{
+        min-width:0;
+        flex:1;
+    }
+
+    #filterBtn,
+    #sortBtn{
+        width:92px;
+        font-size:13px;
+    }
+
+    .filter-menu,
+    #sortMenu{
+        width:170px;
+    }
 }
 
 .demand-cosmic{
@@ -438,20 +575,303 @@ border:1px solid rgba(184,137,255,.35);
 
 }
 
+.trade-container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:24px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.trade-side{
+    width:260px;
+    min-height:300px;
+    background:rgba(30,20,50,.92);
+    border:1px solid rgba(140,90,255,.18);
+    border-radius:14px;
+    padding:16px;
+    box-shadow:0 0 15px rgba(140,90,255,.12);
+}
+
+.trade-side h3{
+    margin:0 0 12px;
+    text-align:center;
+    font-size:18px;
+}
+
+.trade-middle{
+    font-size:34px;
+    font-weight:bold;
+    color:#8f67ff;
+    padding-top:120px;
+}
+
+.trade-add-button{
+    width:58px;
+    height:58px;
+    margin:22px auto;
+    border:none;
+    border-radius:50%;
+    background:#6f4cff;
+    color:#fff;
+    font-size:34px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 0 14px rgba(140,90,255,.45);
+}
+
+.trade-add-button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 24px rgba(140,90,255,.7);
+}
+
+.trade-summary{
+    margin-top:24px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    font-size:15px;
+    font-weight:700;
+}
+.pet-picker{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(8px);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99999;
+animation:fadeIn .2s;
+}
+.pet-picker.show{
+display:flex;
+}
+.pet-picker-window{
+width:min(1100px,92%);
+height:min(720px,90vh);
+background:#171228;
+border-radius:18px;
+border:1px solid rgba(140,90,255,.25);
+box-shadow:
+0 0 40px rgba(140,90,255,.25);
+display:flex;
+flex-direction:column;
+overflow:hidden;
+}
+
+.picker-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 24px;
+background:rgba(35,25,55,.95);
+border-bottom:1px solid rgba(140,90,255,.15);
+}
+.picker-header h2{
+margin:0;
+font-size:22px;
+}
+
+#closePetPicker{
+font-size:28px;
+cursor:pointer;
+transition:.2s;
+}
+
+#closePetPicker:hover{
+transform:scale(1.15);
+color:#9f7cff;
+}
+
+#pickerSearch{
+margin:20px;
+height:46px;
+border:none;
+border-radius:12px;
+background:#241b3d;
+padding:0 18px;
+color:white;
+font-size:15px;
+outline:none;
+}
+.picker-grid{
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+gap:18px;
+overflow:auto;
+}
+
+.variant-add{
+width:26px;
+height:26px;
+border:none;
+border-radius:50%;
+background:#6f4cff;
+color:white;
+font-weight:700;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+transition:.2s;
+box-shadow:
+0 0 12px rgba(140,90,255,.5);
+}
+.variant-add:hover{
+transform:scale(1.1);
+box-shadow:
+0 0 22px rgba(140,90,255,.8);
+}
+.variant-add::before{
+content:"";
+position:absolute;
+left:-50%;
+top:0;
+width:40%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.8),
+transparent
+);
+transform:skewX(-20deg);
+animation:addGlow 2s linear infinite;
+}
+@keyframes addGlow{
+100%{
+left:160%;
+}
+}
+.trade-item{
+display:grid;
+grid-template-columns:1fr auto auto;
+align-items:center;
+gap:12px;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+.trade-delete{
+transition:.2s;
+}
+.trade-delete:hover{
+transform:scale(1.2);
+color:#ff2020;
+}
+#tokenAmount::-webkit-outer-spin-button,
+#tokenAmount::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+}
+
+img{
+    image-rendering:auto;
+    backface-visibility:hidden;
+}
+body{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+}
+.trade-summary > div{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-width:140px;
+}
+
+.trade-summary img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    image-rendering:auto;
+    transform:none !important;
+}
+
+/* Chrome / Edge / Opera */
+.picker-grid::-webkit-scrollbar{
+    width:10px;
+}
+.picker-grid::-webkit-scrollbar-track{
+    background:#1d1531;
+    border-radius:10px;
+}
+.picker-grid::-webkit-scrollbar-thumb{
+    background:linear-gradient(#6f4cff,#9b6cff);
+    border-radius:10px;
+    border:2px solid #1d1531;
+}
+.picker-grid::-webkit-scrollbar-thumb:hover{
+    background:#a67dff;
+}
+/* Firefox */
+.picker-grid{
+    scrollbar-width:thin;
+    scrollbar-color:#7b5cff #1d1531;
+}
+/* Firefox */
+*{
+    scrollbar-width:thin;
+    scrollbar-color:#8b5cff #1a1230;
+}
+
+/* Chrome, Edge, Opera */
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#1a1230;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#7a5cff;
+    border-radius:10px;
+    border:2px solid #1a1230;
+    box-shadow:0 0 10px rgba(140,90,255,.6);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(180deg,#8b6cff,#b18cff);
+}
+
+::-webkit-scrollbar-corner{
+    background:#1a1230;
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 
-<div class="header-note"><div id="last-updated">Muscle For Arm Wrestle Value List By Zak</div></div>
+<div class="header-note"><div id="last-updated">Muscle For Arm Wrestle Value List By Zak, Sza and Rimuru</div></div>
 
 <div class="tabs">
   <div class="tab" onclick="switchSection(event, 'All')">All</div>
-  <div class="tab" onclick="switchSection(event, 'Titanics')">Titanics</div>
-  <div class="tab" onclick="switchSection(event, 'Huges')">Huges</div>
-  <div class="tab" onclick="switchSection(event, 'StatPets')">Stat Pets</div>
-  <div class="tab" onclick="switchSection(event, 'about')">About Us</div>
+  <div class="tab" onclick="switchSection(event, 'Titanics')">
+    Titanics
+  </div>
+  <div class="tab" onclick="switchSection(event, 'Huges')">
+    Huges
+  </div>
+  <div class="tab" onclick="switchSection(event, 'StatPets')">
+    Stat Pets
+  </div>
+  <div class="tab" onclick="switchSection(event, 'TradeCalculator')">
+    Calculator
+  </div>
+  <div class="tab" onclick="switchSection(event, 'about')">
+    About Us
+  </div>
 </div>
 
 <div class="toolbar">
@@ -518,7 +938,7 @@ border:1px solid rgba(184,137,255,.35);
 </div>
 
 <div id="All" class="section">
-    <h2>All Pets</h2>
+    <h2></h2>
     <div class="pet-grid" id="All-grid"></div>
 </div>
 <div id="Titanics" class="section">
@@ -532,6 +952,44 @@ border:1px solid rgba(184,137,255,.35);
 <div id="StatPets" class="section">
   <h2>Stat Pets</h2>
   <div class="pet-grid" id="StatPets-grid"></div>
+</div>
+<div id="TradeCalculator" class="section">
+<h2>Trade Calculator</h2>
+<div class="trade-container">
+    <div class="trade-side">
+        <h3>Your Trade</h3>
+        <div id="yourTradeList"></div>
+        <button id="addYourTrade" class="trade-add-button">
+            +
+        </button>
+    </div>
+    <div class="trade-middle">
+        ⇄
+    </div>
+    <div class="trade-side">
+        <h3>Their Trade</h3>
+        <div id="theirTradeList"></div>
+        <button id="addTheirTrade" class="trade-add-button">
+            +
+        </button>
+    </div>
+</div>
+<div class="trade-summary">
+<div>
+<b>Your Total</b><br>
+<img
+src="https://i.postimg.cc/Hk1g1KNN/tokens.png"
+style="width:22px;height:22px;vertical-align:middle;margin-right:4px;">
+<span id="yourTotal">0</span>
+</div>
+<div>
+<b>Their Total</b><br>
+<img
+src="https://i.postimg.cc/Hk1g1KNN/tokens.png"
+style="width:22px;height:22px;vertical-align:middle;margin-right:4px;">
+<span id="theirTotal">0</span>
+</div>
+</div>
 </div>
 <div id="about" class="section">
   <h2>About Us</h2>
@@ -569,6 +1027,23 @@ Rainbow
 <canvas id="graphCanvas"></canvas>
 </div>
 </div>
+
+<div id="petPicker" class="pet-picker">
+    <div class="pet-picker-window">
+        <div class="picker-header">
+            <h2>Select Pet</h2>
+            <span id="closePetPicker">✕</span>
+        </div>
+        <input
+            type="text"
+            id="pickerSearch"
+            placeholder="🔍 Search pets..."
+        >
+        <div id="pickerGrid" class="picker-grid">
+        </div>
+    </div>
+</div>
+
 <script>
 let currentSection = "All";
 function switchSection(event,id){
@@ -621,6 +1096,7 @@ function getDemandClass(value) {
 function renderPetsForSection(section){
   const grid=document.getElementById(`${section}-grid`);
   grid.innerHTML="";
+  
   pets[section].forEach(p=>{
     const card=document.createElement("div");
     card.className="pet-card";
@@ -776,14 +1252,14 @@ addPet("Titanics",{
     description:"Limited-Time Titanic From Poseidon Egg in Exclusive Shop. 350% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"45000",change:"=",demand:"9"},
-        gold:{value:"100000",change:"=",demand:"9"},
+        normal:{value:"55000",change:"+",demand:"9"},
+        gold:{value:"120000",change:"+",demand:"9"},
         rainbow:{value:"350000",change:"+",demand:"10"}
     },
     history:{
-        normal:[["26 Jun",50000] , ["27 Jun",45000]],
-        gold:[["26 Jun",120000] , ["27 Jun",100000]],
-        rainbow:[["26 Jun",0] , ["26 Jun",250000]]
+        normal:[["26 Jun",50000] , ["27 Jun",45000] , ["30 Jun",55000]],
+        gold:[["26 Jun",120000] , ["27 Jun",100000] , ["30 Jun",120000]],
+        rainbow:[["26 Jun",0] , ["26 Jun",250000] , ["30 Jun",350000]]
     }
 });
 
@@ -795,12 +1271,12 @@ addPet("Titanics",{
     variants:{
         normal:{value:"30000",change:"-",demand:"8"},
         gold:{value:"65000",change:"-",demand:"8"},
-        rainbow:{value:"145000",change:"-",demand:"9"}
+        rainbow:{value:"140000",change:"=",demand:"9"}
     },
     history:{
         normal:[["26 Jun",32500] , ["27 Jun",34000] , ["28 Jun",31000] , ["29 Jun",30000]],
         gold:[["26 Jun",70000] , ["27 Jun",75000] , ["28 Jun",68000] , ["29 Jun",65000]],
-        rainbow:[["28 Jun",150000] , ["29 Jun",145000]]
+        rainbow:[["28 Jun",150000] , ["29 Jun",145000] , ["30 Jun",140000]]
     }
 });
 
@@ -822,53 +1298,53 @@ addPet("Titanics",{
 });
 
 addPet("Huges",{
-    name:"Kraken",
-    img:"https://i.postimg.cc/c13YcJtk/kraken.png",
-    description:"225% as Strong as your Best Pet!",
-    updated:now(),
-    variants:{
-        normal:{value:"5500",change:"=",demand:"8"},
-        gold:{value:"12000",change:"=",demand:"8"},
-        rainbow:{value:"30000",change:"+",demand:"9"}
-    },
-    history:{
-        normal:[["26 Jun",5500]],
-        gold:[["26 Jun",12000]],
-        rainbow:[["26 Jun",0] , ["29 Jun",30000]]
-    }
-});
-
-addPet("Huges",{
     name:"The Order",
     img:"https://i.postimg.cc/1z8JHQQs/order.png",
     description:"250% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"5200",change:"=",demand:"8"},
-        gold:{value:"11500",change:"=",demand:"8"},
-        rainbow:{value:"35000",change:"+",demand:"10"}
+        normal:{value:"5800",change:"+",demand:"8"},
+        gold:{value:"13000",change:"+",demand:"8"},
+        rainbow:{value:"40000",change:"+",demand:"10"}
     },
     history:{
-        normal:[["26 Jun",5200]],
-        gold:[["26 Jun",11500]],
-        rainbow:[["26 Jun",0] , ["29 Jun",30000]]
+        normal:[["26 Jun",5200] , ["30 Jun",5800]],
+        gold:[["26 Jun",11500] , ["30 Jun",13000]],
+        rainbow:[["26 Jun",0] , ["29 Jun",30000] , ["30 Jun",40000]]
     }
 });
 
 addPet("Huges",{
-    name:"The Omen",
-    img:"https://i.postimg.cc/j5dq9ZMY/omen.png",
-    description:"240% as Strong as your Best Pet!",
+    name:"Kraken",
+    img:"https://i.postimg.cc/c13YcJtk/kraken.png",
+    description:"225% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"2200",change:"-",demand:"7"},
-        gold:{value:"5500",change:"-",demand:"7"},
-        rainbow:{value:"13000",change:"-",demand:"8"}
+        normal:{value:"5800",change:"+",demand:"8"},
+        gold:{value:"12000",change:"+",demand:"8"},
+        rainbow:{value:"35000",change:"+",demand:"9"}
     },
     history:{
-        normal:[["26 Jun",3800] , ["27 Jun",3000] , ["28 Jun",2800] , ["29 Jun",2200]],
-        gold:[["26 Jun",8500] , ["27 Jun",7000] , ["28 Jun",6500] , ["29 Jun",5500]],
-        rainbow:[["26 Jun",19000] , ["27 Jun",16000] , ["28 Jun",15000] , ["29 Jun",13000]]
+        normal:[["26 Jun",5500] , ["30 Jun",5800]],
+        gold:[["26 Jun",12000] , ["30 Jun",12000]],
+        rainbow:[["26 Jun",0] , ["29 Jun",30000] , ["30 Jun",35000]]
+    }
+});
+
+addPet("Huges",{
+    name:"Cosmi Bear",
+    img:"https://i.postimg.cc/TwJKZKjx/cosmi-bear.png",
+    description:"175% as Strong as your Best Pet!",
+    updated:now(),
+    variants:{
+        normal:{value:"3500",change:"+",demand:"7"},
+        gold:{value:"7500",change:"+",demand:"8"},
+        rainbow:{value:"20000",change:"+",demand:"10"}
+    },
+    history:{
+        normal:[["26 Jun",2000] , ["30 Jun",3500]],
+        gold:[["26 Jun",4500] , ["30 Jun",7500]],
+        rainbow:[["26 Jun",0] , ["29 Jun",16000] , ["30 Jun",20000]]
     }
 });
 
@@ -880,29 +1356,30 @@ addPet("Huges",{
     variants:{
         normal:{value:"2500",change:"=",demand:"7"},
         gold:{value:"5500",change:"=",demand:"8"},
-        rainbow:{value:"20000",change:"+",demand:"10"}
+        rainbow:{value:"25000",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",2500]],
         gold:[["26 Jun",5500]],
-        rainbow:[["26 Jun",0] , ["29 Jun",20000]]
+        rainbow:[["26 Jun",0] , ["29 Jun",20000] , ["30 Jun",25000]]
     }
 });
 
+
 addPet("Huges",{
-    name:"Cosmi Bear",
-    img:"https://i.postimg.cc/TwJKZKjx/cosmi-bear.png",
+    name:"Paddinglock",
+    img:"https://i.postimg.cc/FKDt8mf8/paddinglock.png",
     description:"175% as Strong as your Best Pet!",
     updated:now(),
     variants:{
         normal:{value:"2000",change:"+",demand:"7"},
         gold:{value:"4500",change:"+",demand:"8"},
-        rainbow:{value:"16000",change:"+",demand:"10"}
+        rainbow:{value:"15000",change:"+",demand:"10"}
     },
     history:{
-        normal:[["26 Jun",2000]],
-        gold:[["26 Jun",4500]],
-        rainbow:[["26 Jun",0] , ["29 Jun",16000]]
+        normal:[["26 Jun",1500] , ["30 Jun",2000]],
+        gold:[["26 Jun",3250] , ["30 Jun",4500]],
+        rainbow:[["26 Jun",0] , ["29 Jun",11500] , ["30 Jun",15000]]
     }
 });
 
@@ -924,19 +1401,19 @@ addPet("Huges",{
 });
 
 addPet("Huges",{
-    name:"Paddinglock",
-    img:"https://i.postimg.cc/FKDt8mf8/paddinglock.png",
-    description:"175% as Strong as your Best Pet!",
+    name:"The Omen",
+    img:"https://i.postimg.cc/j5dq9ZMY/omen.png",
+    description:"240% as Strong as your Best Pet!",
     updated:now(),
     variants:{
-        normal:{value:"1500",change:"+",demand:"7"},
-        gold:{value:"3250",change:"+",demand:"8"},
-        rainbow:{value:"11500",change:"+",demand:"10"}
+        normal:{value:"2000",change:"-",demand:"7"},
+        gold:{value:"5000",change:"-",demand:"7"},
+        rainbow:{value:"13000",change:"-",demand:"8"}
     },
     history:{
-        normal:[["26 Jun",1500]],
-        gold:[["26 Jun",3250]],
-        rainbow:[["26 Jun",0] , ["29 Jun",11500]]
+        normal:[["26 Jun",3800] , ["27 Jun",3000] , ["28 Jun",2800] , ["29 Jun",2200] , ["30 Jun",2000]],
+        gold:[["26 Jun",8500] , ["27 Jun",7000] , ["28 Jun",6500] , ["29 Jun",5500] , ["30 Jun",5000]],
+        rainbow:[["26 Jun",19000] , ["27 Jun",16000] , ["28 Jun",15000] , ["29 Jun",13000]]
     }
 });
 
@@ -1095,7 +1572,7 @@ document
 .classList.add("active");
 }
 
-const fixedTime = new Date("2026-06-29T12:43:00Z").getTime();
+const fixedTime = new Date("2026-06-29T22:17:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
@@ -1287,6 +1764,229 @@ document
 .forEach(box=>{
     box.addEventListener("change",applyFilters);
 });
+
+const petPicker=document.getElementById("petPicker");
+document.getElementById("closePetPicker").onclick=()=>{
+    petPicker.classList.remove("show");
+};
+petPicker.onclick=e=>{
+    if(e.target===petPicker){
+
+        petPicker.classList.remove("show");
+    }
+};
+
+
+function renderPetPicker(){
+    const grid=document.getElementById("pickerGrid");
+   grid.innerHTML=`
+<div class="pet-card">
+<img
+src="https://i.postimg.cc/Hk1g1KNN/tokens.png"
+class="loaded"
+style="width:110px;height:110px;object-fit:contain;">
+<div class="pet-name">Tokens</div>
+<div style="
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+margin-top:12px;
+">
+<input
+id="tokenAmount"
+type="number"
+placeholder="Amount"
+style="
+display:block;
+width:140px;
+height:42px;
+margin:10px auto;
+background:#241b3d;
+border:none;
+border-radius:10px;
+color:white;
+font-size:18px;
+font-weight:700;
+text-align:center;
+outline:none;
+appearance:textfield;
+-moz-appearance:textfield;
+"
+>
+<button
+class="variant-add"
+onclick="addTokensFromCard()">
++
+</button>
+</div>
+</div>
+`;
+    pets.All.forEach(p=>{
+        const card=document.createElement("div");
+        card.className="pet-card";
+        card.innerHTML=`
+        <img
+        loading="lazy"
+        decoding="async"
+        src="${p.img}"
+        alt="${p.name}">
+        <div class="pet-name">
+        ${p.name}
+        </div>
+        ${createVariant(p.img,p.name,"Normal",p.variants.normal)}
+        ${createVariant(p.img,p.name,"Gold",p.variants.gold)}
+        ${createVariant(p.img,p.name,"Rainbow",p.variants.rainbow)}
+        `;
+        grid.appendChild(card);
+        const img=card.querySelector("img");
+
+img.onload=()=>{
+    img.classList.add("loaded");
+};
+
+if(img.complete){
+    img.classList.add("loaded");
+}
+    });
+}
+let tradeSide="";
+
+document.getElementById("pickerSearch").addEventListener("input",function(){
+
+const q=this.value.toLowerCase();
+
+document.querySelectorAll("#pickerGrid .pet-card").forEach(card=>{
+
+const name=(card.querySelector(".pet-name")?.textContent||"").toLowerCase();
+
+card.style.display=name.includes(q)?"":"none";
+
+});
+
+});
+
+function createVariant(img, petName, variantName, variant){
+    if(!variant) return "";
+    return `
+    <div class="pet-row">
+        <div>${variantName}</div>
+        <div>${variant.value}</div>
+        <button
+class="variant-add"
+onclick="event.stopPropagation();addTradePet(
+'${petName}',
+'${variantName}',
+'${variant.value}',
+'${img}'
+)">
++
+</button>
+    </div>
+    `;
+}
+
+function addTokens(){
+const amount=prompt("Enter token amount:");
+if(amount===null) return;
+const value=Number(amount.replace(/,/g,""));
+if(isNaN(value)) return;
+const list=document.getElementById(
+tradeSide==="your"
+?"yourTradeList"
+:"theirTradeList"
+);
+list.innerHTML+=`
+<div class="pet-row trade-item">
+<div style="display:flex;align-items:center;gap:8px;">
+<img
+src="https://i.postimg.cc/Hk1g1KNN/tokens.png"
+style="width:42px;height:42px;">
+</div>
+<div class="trade-value">${value}</div>
+<div
+class="trade-delete"
+onclick="this.parentElement.remove();updateTradeTotals();"
+style="cursor:pointer;font-size:20px;color:#ff5b5b;">
+🗑
+</div>
+</div>
+`;
+updateTradeTotals();
+setTimeout(() => {
+    petPicker.classList.remove("show");
+}, 0);
+}
+
+function openPetPicker(side){
+    tradeSide=side;
+    petPicker.classList.add("show");
+    renderPetPicker();
+}
+document.getElementById("addYourTrade").onclick=()=>openPetPicker("your");
+document.getElementById("addTheirTrade").onclick=()=>openPetPicker("their");
+
+function addTokensFromCard(){
+const input=document.getElementById("tokenAmount");
+const value=Number(input.value);
+if(!value || value<=0) return;
+addTradePet(
+"",
+"",
+value,
+"https://i.postimg.cc/Hk1g1KNN/tokens.png"
+);
+input.value="";
+}
+
+function addTradePet(name, variant, value, img){
+
+    const list = document.getElementById(
+        tradeSide === "your"
+        ? "yourTradeList"
+        : "theirTradeList"
+    );
+
+    list.innerHTML += `
+<div class="pet-row trade-item">
+<div style="display:flex;align-items:center;gap:8px;">
+<img
+src="${img}"
+style="width:42px;height:42px;object-fit:contain;">
+<div>
+${variant ? `<b>${variant}</b><br>` : ""}
+${name}
+</div>
+</div>
+<div class="trade-value">${value}</div>
+<div class="trade-delete"
+onclick="this.parentElement.remove();updateTradeTotals();"
+style="cursor:pointer;font-size:20px;color:#ff5b5b;">
+🗑
+</div>
+</div>
+`;
+
+    updateTradeTotals();
+    petPicker.classList.remove("show");
+}
+
+function updateTradeTotals(){
+let your=0;
+document.querySelectorAll("#yourTradeList .trade-item").forEach(item=>{
+    your += Number(
+        item.querySelector(".trade-value").textContent.replace(/,/g,"")
+    ) || 0;
+});
+let their=0;
+document.querySelectorAll("#theirTradeList .trade-item").forEach(item=>{
+    their += Number(
+        item.querySelector(".trade-value").textContent.replace(/,/g,"")
+    ) || 0;
+});
+document.getElementById("yourTotal").textContent=your.toLocaleString();
+document.getElementById("theirTotal").textContent=their.toLocaleString();
+}
 
 </script>
 </body>
