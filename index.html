@@ -378,6 +378,69 @@ border:1px solid rgba(184,137,255,.35);
     margin-right:8px;
 }
 
+.demand-cosmic{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff66ff,
+        #6fdcff,
+        #ffffff,
+        #7d5cff,
+        #ff66ff
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        cosmicText 4s linear infinite,
+        cosmicPulse 2s ease-in-out infinite;
+}
+
+@keyframes cosmicText{
+    0%{
+        background-position:0%;
+    }
+    100%{
+        background-position:300%;
+    }
+}
+
+@keyframes cosmicPulse{
+    0%,100%{
+        filter:
+            drop-shadow(0 0 3px #8f7cff)
+            drop-shadow(0 0 6px #8f7cff);
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 8px #ffffff)
+            drop-shadow(0 0 16px #8f7cff)
+            drop-shadow(0 0 28px #6fdcff);
+    }
+}
+
+@keyframes shine{
+
+    0%{
+        left:-60%;
+    }
+
+    100%{
+        left:170%;
+    }
+
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -553,7 +616,8 @@ if(section !== "All"){
 function getDemandClass(value) {
   if(value>=1 && value<=3) return 'demand-red';
   if(value>=4 && value<=6) return 'demand-yellow';
-  if(value>=7 && value<=10) return 'demand-green';
+  if(value>=7 && value<=9) return 'demand-green';
+  if(value==10) return 'demand-cosmic';
   return '';
 }
 
@@ -717,12 +781,12 @@ addPet("Titanics",{
     variants:{
         normal:{value:"45000",change:"=",demand:"9"},
         gold:{value:"100000",change:"=",demand:"9"},
-        rainbow:{value:"O/C",change:"+",demand:"10"}
+        rainbow:{value:"350000",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",50000] , ["27 Jun",45000]],
         gold:[["26 Jun",120000] , ["27 Jun",100000]],
-        rainbow:[["26 Jun",0]]
+        rainbow:[["26 Jun",0] , ["26 Jun",250000]]
     }
 });
 
@@ -785,12 +849,12 @@ addPet("Huges",{
     variants:{
         normal:{value:"5200",change:"=",demand:"8"},
         gold:{value:"11500",change:"=",demand:"8"},
-        rainbow:{value:"O/C",change:"+",demand:"10"}
+        rainbow:{value:"35000",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",5200]],
         gold:[["26 Jun",11500]],
-        rainbow:[["26 Jun",0]]
+        rainbow:[["26 Jun",0] , ["29 Jun",30000]]
     }
 });
 
@@ -819,12 +883,12 @@ addPet("Huges",{
     variants:{
         normal:{value:"2500",change:"=",demand:"7"},
         gold:{value:"5500",change:"=",demand:"8"},
-        rainbow:{value:"O/C",change:"+",demand:"10"}
+        rainbow:{value:"20000",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",2500]],
         gold:[["26 Jun",5500]],
-        rainbow:[["26 Jun",0]]
+        rainbow:[["26 Jun",0] , ["29 Jun",20000]]
     }
 });
 
@@ -836,12 +900,12 @@ addPet("Huges",{
     variants:{
         normal:{value:"2000",change:"+",demand:"7"},
         gold:{value:"4500",change:"+",demand:"8"},
-        rainbow:{value:"O/C",change:"+",demand:"10"}
+        rainbow:{value:"16000",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",2000]],
         gold:[["26 Jun",4500]],
-        rainbow:[["26 Jun",0]]
+        rainbow:[["26 Jun",0] , ["29 Jun",16000]]
     }
 });
 
@@ -870,12 +934,12 @@ addPet("Huges",{
     variants:{
         normal:{value:"1500",change:"+",demand:"7"},
         gold:{value:"3250",change:"+",demand:"8"},
-        rainbow:{value:"O/C",change:"+",demand:"10"}
+        rainbow:{value:"11500",change:"+",demand:"10"}
     },
     history:{
         normal:[["26 Jun",1500]],
         gold:[["26 Jun",3250]],
-        rainbow:[["26 Jun",0]]
+        rainbow:[["26 Jun",0] , ["29 Jun",11500]]
     }
 });
 
@@ -1034,7 +1098,7 @@ document
 .classList.add("active");
 }
 
-const fixedTime = new Date("2026-06-29T08:36:00Z").getTime();
+const fixedTime = new Date("2026-06-29T09:14:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
