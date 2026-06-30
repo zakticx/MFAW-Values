@@ -1491,12 +1491,12 @@ addPet("Huges",{
     updated:now(),
     variants:{
         normal:{value:"1200",change:"+",demand:"8"},
-        gold:{value:"2500",change:"+",demand:"8"},
+        gold:{value:"3200",change:"+",demand:"8"},
         rainbow:{value:"8000",change:"+",demand:"9"}
     },
     history:{
         normal:[["1 July",1200]],
-        gold:[["1 July",2500]],
+        gold:[["1 July",3200]],
         rainbow:[["1 July",8000]]
     }
 });
@@ -1622,7 +1622,7 @@ document
 .classList.add("active");
 }
 
-const fixedTime = new Date("2026-06-30T21:37:00Z").getTime();
+const fixedTime = new Date("2026-06-30T21:40:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
