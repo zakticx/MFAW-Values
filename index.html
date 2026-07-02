@@ -1440,12 +1440,12 @@ addPet("Huges",{
     updated:now(),
     variants:{
         normal:{value:"2000",change:"+",demand:"7"},
-        gold:{value:"4500",change:"+",demand:"7"},
+        gold:{value:"5000",change:"+",demand:"8"},
         rainbow:{value:"14000",change:"+",demand:"8"}
     },
     history:{
         normal:[["26 Jun",3800] , ["27 Jun",3000] , ["28 Jun",2800] , ["29 Jun",2200] , ["30 Jun",2000] , ["1 July",1800] , ["2 July",2000]],
-        gold:[["26 Jun",8500] , ["27 Jun",7000] , ["28 Jun",6500] , ["29 Jun",5500] , ["30 Jun",5000] , ["1 July",4500]],
+        gold:[["26 Jun",8500] , ["27 Jun",7000] , ["28 Jun",6500] , ["29 Jun",5500] , ["30 Jun",5000] , ["1 July",4500] , ["2 July",5000]],
         rainbow:[["26 Jun",19000] , ["27 Jun",16000] , ["28 Jun",15000] , ["29 Jun",13000] , ["2 July",14000]]
     }
 });
@@ -1474,13 +1474,13 @@ addPet("Huges",{
     updated:now(),
     variants:{
         normal:{value:"1400",change:"=",demand:"7"},
-        gold:{value:"3000",change:"=",demand:"7"},
-        rainbow:{value:"9000",change:"=",demand:"8"}
+        gold:{value:"3500",change:"=",demand:"7"},
+        rainbow:{value:"10000",change:"+",demand:"8"}
     },
     history:{
         normal:[["26 Jun",1400]],
-        gold:[["26 Jun",3000]],
-        rainbow:[["26 Jun",6500] , ["1 July",9000]]
+        gold:[["26 Jun",3000] , ["2 July",3500]],
+        rainbow:[["26 Jun",6500] , ["1 July",9000] , ["2 July",10000]]
     }
 });
 
@@ -1622,7 +1622,7 @@ document
 .classList.add("active");
 }
 
-const fixedTime = new Date("2026-07-02T05:40:00Z").getTime();
+const fixedTime = new Date("2026-07-02T05:43:00Z").getTime();
 for (let section in pets) {
   pets[section].forEach(p => p.updated = fixedTime);
 }
